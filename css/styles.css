@@ -1,3 +1,28 @@
-span{
+h1 {
+    margin-left: 20%;
+}
+
+span {
     color: red;
+}
+
+input[type=text] {
+    margin-bottom: 1em;
+}
+
+form label {
+    text-align: right;
+    display: inline-block;
+    width: 20%;
+    margin-right: 2em;
+}
+
+form button {
+    margin-left: 20%;
+}
+
+@media only screen and (max-width: 400px) {
+    form label {
+        text-align: left;
+    }
 }
