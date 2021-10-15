@@ -15,12 +15,19 @@
     <form>
         <label for="first_name">First Name</label>
         <input type="text" id="first_name">
-        <span>*</span>
+        <span data_required id="first_name_span" data_default_error="First name is required">*</span>
         <br>
+
         <label for="last_name">Last Name</label>
         <input type="text" id="last_name">
-        <span>*</span>
+        <span data_required id="last_name_span">*</span>
         <br>
+        
+        <label for="dob">Date of Birth</label>
+        <input type="text">
+        <span></span>
+        <br>
+        
         <button type="button">Register</button>
     </form>
 

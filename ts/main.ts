@@ -4,6 +4,7 @@ window.onload = function() {
 }
 
 function main(): void {
+    resetErrorMessages();
     let fNameErr = "Please enter your first name";
     isTextPresent("first_name", fNameErr);
 
@@ -28,6 +29,24 @@ function isTextPresent(id: string, errMsg:string):boolean {
         return false;
     }
     return true;
+}
+
+/**
+ * resets all the spans back to default text
+ */
+function resetErrorMessages():void {
+    let allSpans = document.querySelectorAll("form span");
+    for (let i = 0; i < allSpans.length; i++) {
+        let currSpan = <HTMLElement>allSpans[i];
+
+        if (currSpan.hasAttribute("data_required")) {
+            currSpan.innerHTML = "*";
+        }
+        else {
+            currSpan.innerHTML = "";
+        }
+    }
+
 }
 
 function $(id):HTMLElement {
