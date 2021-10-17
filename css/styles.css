@@ -1,3 +1,7 @@
+body {
+    font-family: 'ZCOOL KuaiLe', cursive;
+}
+
 h1 {
     margin-left: 20%;
 }
@@ -19,6 +23,16 @@ form label {
 
 form button {
     margin-left: 20%;
+    border-radius: 1em;
+    padding: .75em;
+    background-color: skyblue;
+    font-weight: bolder;
+    cursor: pointer;
+    font-family: 'ZCOOL KuaiLe', cursive;
+}
+
+button:hover {
+    background-color:royalblue;
 }
 
 @media only screen and (max-width: 400px) {
