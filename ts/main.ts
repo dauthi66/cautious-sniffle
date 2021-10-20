@@ -11,6 +11,27 @@ function main(): void {
     let lNameErr = "Please enter your last name";
     isTextPresent("last_name", lNameErr);
 
+    //validate date
+    let dobBox = <HTMLInputElement>document.getElementById("dob");
+    let dob = dobBox.value;
+    
+    
+    if(!isvalidDate(dob)){
+
+        let errSpan = dobBox.nextElementSibling;
+        errSpan.innerHTML = "Use format mm/dd/yyyy";
+    }
+
+
+}
+
+function isvalidDate(input: string):boolean{
+    //validates mm/dd/yyyy and m/d/yyyy
+    //REGULAR EXPRESSION starts with carrot, $ sign means find only one time
+    //set a pattert, begins and ends with /, g makes it look for the pattern throughout the string
+    let pattern = /^\d{1,2}\/\d{1,2}\/\d{4}$/g
+    //returns as boolean
+    return pattern.test(input);
 
 }
 /**
