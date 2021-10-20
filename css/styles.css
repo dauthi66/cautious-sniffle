@@ -6,6 +6,10 @@ h1 {
     margin-left: 20%;
 }
 
+p {
+    margin-left: 20%;
+    padding-left: 5em;
+}
 span {
     color: red;
 }
@@ -29,10 +33,20 @@ form button {
     font-weight: bolder;
     cursor: pointer;
     font-family: 'ZCOOL KuaiLe', cursive;
+    
+}
+
+h1:hover {
+    cursor: pointer;
 }
 
 button:hover {
     background-color:royalblue;
+}
+a
+.message {
+    font-style: italic;
+    margin-left: 20%;
 }
 
 @media only screen and (max-width: 400px) {

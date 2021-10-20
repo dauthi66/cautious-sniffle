@@ -1,10 +1,26 @@
 window.onload = function() {
+    //change heading color on click
+    let h1 = document.querySelector("h1");
+    h1.onclick = changeColor;
+
     let formBtn = <HTMLElement>document.querySelector("form > button");
     formBtn.onclick = main;
 }
 
 function main(): void {
+    //create an H2 and place it
+    //creates an H2
+    let msgHeading = document.createElement("h2");
+    msgHeading.innerText = "Processing Form";
+    //sets attribute class="message"
+    msgHeading.setAttribute("class", "message")
+    let h1 = document.querySelector("h1");
+    //places H2 "afterend", after the element (sibling)
+    h1.insertAdjacentElement("afterend", msgHeading);
+
     resetErrorMessages();
+
+    //validate first and last name
     let fNameErr = "Please enter your first name";
     isTextPresent("first_name", fNameErr);
 
@@ -12,17 +28,18 @@ function main(): void {
     isTextPresent("last_name", lNameErr);
 
     //validate date
+    checkValidDate();
+}
+
+function checkValidDate() {
     let dobBox = <HTMLInputElement>document.getElementById("dob");
     let dob = dobBox.value;
-    
-    
-    if(!isvalidDate(dob)){
+
+    if (!isvalidDate(dob)) {
 
         let errSpan = dobBox.nextElementSibling;
         errSpan.innerHTML = "Use format mm/dd/yyyy";
     }
-
-
 }
 
 function isvalidDate(input: string):boolean{
@@ -69,6 +86,18 @@ function resetErrorMessages():void {
     }
 
 }
+
+/**
+ * changes an elements color on click
+ */
+function changeColor() {
+    let element = <HTMLElement>this;
+    //math.floor to round down from decimal, random number 1 - 255 
+    let red = Math.floor(Math.random() * 255 + 1)
+    let green = Math.floor(Math.random() * 255 + 1)
+    let blue = Math.floor(Math.random() * 255 + 1)
+    element.style.color = `rgb(${red}, ${green}, ${blue})`
+}   
 
 function $(id):HTMLElement {
     return document.getElementById(id);
